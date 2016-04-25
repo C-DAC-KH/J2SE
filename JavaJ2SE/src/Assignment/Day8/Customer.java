@@ -6,21 +6,29 @@
 package Assignment.Day8;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
  * @author vichet
  */
-public class Customers {
+public class Customer {
     private String email,password;
     private Date dob;
     private double amount;
 
-    public Customers(String email, String password, Date dob, double amount) {
+    public Customer() {
+    }
+
+    public Customer(String email, String password, Date dob, double amount) {
         this.email = email;
         this.password = password;
         this.dob = dob;
         this.amount = amount;
+    }
+
+    public Customer(String email) {
+        this.email = email;
     }
 
     public String getEmail() {
@@ -56,9 +64,24 @@ public class Customers {
     }
 
     @Override
-    public String toString() {
-        return "Customers{" + "email=" + email + ", password=" + password + ", dob=" + dob + ", amount=" + amount + '}';
+    public int hashCode() {
+        int hash = 7;
+        return hash;
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null && obj instanceof Customer){
+            Customer c = (Customer)obj;
+            return c.getEmail().equalsIgnoreCase(email);
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" + "email=" + email + ", password=" + password + ", dob=" + dob + ", amount=" + amount + '}';
+    }
     
 }
