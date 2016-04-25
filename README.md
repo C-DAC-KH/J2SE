@@ -1,2 +1,2 @@
-# J2SE
-C-DAC-KH-Project
+# JavaApp
+the core java course at CDAC
